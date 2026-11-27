@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoKAYGEE - Car Gallery</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to AutoKAYGEE's Gallery</h1>
+
+         <header>
+        <img src="../Logo/IMG-20240816-WA0035.jpg" alt="LOGO">
+    </header>
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="sales.html">Sales</a></li>
+            <li><a href="gallery.html">gallery</a></li> 
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>   
+        </ul>
+    </nav>
+        
+    
+
+    <section id="gallery" class="gallery-section">
+        <h2>Our Car Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery">
+                <img src="../ASSETS/benz.jpg" class="gallery-item active" alt="Car 1">
+                <img src="../ASSETS/bmw.jpg" class="gallery-item" alt="Car 2">
+                <img src="../ASSETS/FERARRI.jpg" class="gallery-item" alt="Car 3">
+                <img src="../ASSETS/larmbo5.jpg" class="gallery-item" alt="Car 4">
+                <img src="../ASSETS/rs3.jpg" class="gallery-item" alt="Car 5">
+                <img src="../ASSETS/IMG-20240816-WA0024.jpg" class="gallery-item" alt="Car 6">
+                <img src="../ASSETS/IMG-20240816-WA0021.jpg" class="gallery-item" alt="Car 7">
+              
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" 
+
+onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AutoKAYGEE. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("gallery-item");
+
+        function showSlide(index) {
+            if (index >= slides.length) slideIndex = 0;
+            if (index < 0) slideIndex = slides.length - 1;
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+
+            slides[slideIndex].classList.add("active");
+        }
+
+        function moveSlide(n) {
+            slideIndex += n;
+            showSlide(slideIndex);
+        }
+
+        // Initialize the gallery to show the first image
+        showSlide(slideIndex);
+    </script>
+
+</body>
+</html>
